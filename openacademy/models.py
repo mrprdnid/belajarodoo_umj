@@ -73,3 +73,8 @@ class InheritCourse2(models.Model):
 			('smp', 'SMP'),
 			('sma', 'SMA'),
 		])
+
+class PurchaseOrder(models.Model):
+	_inherit = 'purchase.order'
+
+	course_id = fields.Many2one('openacademy.course')
