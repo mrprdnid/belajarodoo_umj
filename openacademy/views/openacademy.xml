@@ -130,6 +130,8 @@
                                 <field name="course_id"/>
                                 <field name="name"/>
                                 <field name="instructor_id"/>
+
+                                <field name="jumlah_peserta2" string="AUto Count"/>
                             </group>
                             <group string="Schedule">
                                 <field name="start_date"/>

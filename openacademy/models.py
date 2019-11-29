@@ -42,6 +42,11 @@ class Session(models.Model):
     		rec.jumlah_peserta = len(rec.attendee_ids)
     jumlah_peserta = fields.Integer(compute=compute_jumlah_peserta)
 
+    @api.onchange('attendee_ids')
+    def compute_jumlah_peserta2(self):
+    	for rec in self:
+    		rec.jumlah_peserta2 = len(rec.attendee_ids)
+    jumlah_peserta2 = fields.Integer()
 
     def compute_sisa_kursi(self):
     	for rec in self:
