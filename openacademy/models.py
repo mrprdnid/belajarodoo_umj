@@ -37,6 +37,18 @@ class Session(models.Model):
         ondelete='cascade', string="Course", required=True)
     attendee_ids = fields.Many2many('res.partner', string="Attendees")	
 
+    def compute_jumlah_peserta(self):
+    	for rec in self:
+    		rec.jumlah_peserta = len(rec.attendee_ids)
+    jumlah_peserta = fields.Integer(compute=compute_jumlah_peserta)
+
+
+    def compute_sisa_kursi(self):
+    	for rec in self:
+    		rec.sisa_kursi = rec.seats - len(rec.attendee_ids)
+    sisa_kursi = fields.Integer(compute=compute_sisa_kursi)
+
+
 
 class InheritCourse1(models.Model):
 	_inherit = 'openacademy.course'

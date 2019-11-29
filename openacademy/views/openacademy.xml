@@ -135,6 +135,8 @@
                                 <field name="start_date"/>
                                 <field name="duration"/>
                                 <field name="seats"/>
+                                <field name="jumlah_peserta"/>
+                                <field name="sisa_kursi"/>
                             </group>
                         </group>
                         <label for="attendee_ids"/>
