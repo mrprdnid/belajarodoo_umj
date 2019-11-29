@@ -36,3 +36,23 @@ class Session(models.Model):
     course_id = fields.Many2one('openacademy.course',
         ondelete='cascade', string="Course", required=True)
     attendee_ids = fields.Many2many('res.partner', string="Attendees")	
+
+
+class InheritCourse1(models.Model):
+	_inherit = 'openacademy.course'
+
+	warna = fields.Selection([
+		('merah', 'Merah'),
+		('biru', 'Biru'),
+		('kuning', 'Kuning'),
+		])
+
+class InheritCourse2(models.Model):
+	_name = 'openacademy.inherit2'
+	_inherit = 'openacademy.course'
+
+	tingkat = fields.Selection([
+			('sd', 'SD'),
+			('smp', 'SMP'),
+			('sma', 'SMA'),
+		])

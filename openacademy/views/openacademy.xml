@@ -54,6 +54,7 @@
                       </div>
                       <separator string="General" colspan="2" />
                       <group colspan="2" col="2">
+                          <field name="warna"/>
                           <field name="responsible_id"/>
                           <field name="description" placeholder="Idea description..." />
                           <field name="description2" placeholder="Idea description2..." />
@@ -151,5 +152,16 @@
 
         <menuitem id="session_menu" name="Sessions"
                   parent="openacademy_menu"
-                  action="session_list_action"/>        
+                  action="session_list_action"/>   
+
+        <record model="ir.actions.act_window" id="inherit2_list_action">
+            <field name="name">Inherit2</field>
+            <field name="res_model">openacademy.inherit2</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="inherit2_menu" name="Inherit 2"
+                  parent="openacademy_menu"
+                  action="inherit2_list_action"/>        
 </odoo>
