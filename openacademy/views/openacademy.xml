@@ -17,6 +17,18 @@
             </field>
         </record>
 
+        <record model="ir.actions.act_window" id="ipa_course_list_action">
+            <field name="name">Courses</field>
+            <field name="res_model">openacademy.course</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('description','=','IPA')]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first course
+                </p>
+            </field>
+        </record>
+
         <!-- top level menu: no parent -->
         <menuitem id="main_openacademy_menu" name="Open Academy"/>
         <!-- A first level in the left side menu is needed
@@ -28,6 +40,8 @@
              action course_list_action -->
         <menuitem id="courses_menu" name="Courses" parent="openacademy_menu"
                   action="course_list_action"/>
+        <menuitem id="ipa_courses_menu" name="Courses IPA" parent="openacademy_menu"
+                  action="ipa_course_list_action"/>
         <!-- Full id location:
              action="openacademy.course_list_action"
              It is not required when it is the same module -->
